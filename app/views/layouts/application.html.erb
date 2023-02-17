@@ -5,27 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-
-<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="simpleParallax.js"></script>
+
   </head>
 
   <body>
-  
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('slick-slide').slick({
-        setting-name: setting-value
-      });
-    });
-  </script>
   <%= yield %>
+
+<script>
+var image = document.getElementsByClassName('.thumbnail');
+new simpleParallax(image, {
+	overflow: true
+});
+</script>
+
   </body>
 </html>
