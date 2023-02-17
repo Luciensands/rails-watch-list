@@ -1,0 +1,13 @@
+<%# <><%= render 'banner' %>
+<%# <div class="container mt-5 .bg-dark-subtle"> %>
+<%= render 'carousel' %>
+<%# </div> %>
+ <%= link_to "New List", new_list_path, class: "btn btn-secondary" %>
+<h2><% @lists.each do |list| %></h2>
+  <div class="slick-slide slick-current slick-active slick-center" data-slick-index="3" aria-hidden="false" style="width: 147px;" tabindex="-1" role="option" aria-describedby="slick-slide63">
+    <div><%= link_to list.name, list_path(list) %>
+         <p><%= list.bookmarks.all %></p>
+    </div>
+
+  </div>
+    <% end %>
